@@ -4,9 +4,13 @@ const http = require('http')
 const config = require("./app/config/public.config");
 const multer  = require('multer')
 const upload = multer()
+const cors = require("cors");
+
 
 
 let app = express()
+app.use(cors({origin: '*'}));
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
