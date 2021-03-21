@@ -38,6 +38,16 @@ exports.sendPush = (req, res) => {
     };
 
     pushNotification(messages)
+        .then(data => {
+            return res.status(200).json({
+                'status': true,
+                'message': "Success",
+            });
+        })
+        .catch(err => {
+
+        })
+
 
     
 }
